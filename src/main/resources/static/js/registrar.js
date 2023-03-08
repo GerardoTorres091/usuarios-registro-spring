@@ -30,6 +30,6 @@ async function registrarUsuario(){
       });
 
       alert('la cuenta fue creada con éxito');
-      window.location('login.html');
+      window.location.href = './login.html';
 
 }

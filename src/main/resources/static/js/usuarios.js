@@ -5,6 +5,14 @@ $(document).ready(function() {
   actualizarEmailUsuario();
 });
 
+function getHeaders() {
+    return {
+             'Accept': 'application/json',
+             'Content-Type': 'application/json',
+             'Autorization': localStorage.token
+           }
+}
+
 function actualizarEmailUsuario(){
     document.getElementById('txt-email-usuario').outerHTML = localStorage.email;
 }
@@ -37,15 +45,6 @@ async function cargarUsuarios(){
       document.querySelector('#usuarios tbody').outerHTML = listadoHtml;
 
 }
-
-function getHeaders() {
-    return {
-             'Accept': 'application/json',
-             'Content-Type': 'application/json',
-             'Authorization': localStorage.token
-           }
-}
-
 
 async function eliminarUsuario(id){
     console.log(id);

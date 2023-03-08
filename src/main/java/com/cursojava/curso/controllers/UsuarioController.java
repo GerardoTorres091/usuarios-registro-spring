@@ -35,7 +35,7 @@ public class UsuarioController {
         return usuario;
     }
 
-    @RequestMapping(value = "api/usuarios")
+    @RequestMapping(value = "api/usuarios", method = RequestMethod.GET)
     public List<Usuario> getUsuarios(@RequestHeader(value="Autorization") String token) {
 
         if (!validarToken(token)){
